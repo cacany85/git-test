@@ -24,6 +24,94 @@
     </section>
   </main>
 
+  <div style="max-width:1200px;margin:auto;padding:40px;font-family:sans-serif;">
+    <h2>분리수거함 추천 상품 보기</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+
+      <div style="border:1px solid #ddd;padding:15px;border-radius:10px;">
+        <iframe
+          src="https://www.youtube.com/embed/NiCFqMeVOXo?autoplay=1&mute=1&playsinline=1&loop=1&playlist=NiCFqMeVOXo"
+          title="YouTube Shorts Video Auto Play"
+          style="width:100%;aspect-ratio:9/16;border:0;border-radius:8px;"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <h3>분리수거함 상품 보기</h3>
+        <p>네이버 쇼핑 검색 결과 확인</p>
+        <a href="https://search.shopping.naver.com/search/all?query=분리수거함" target="_blank">
+          <button style="width:100%;padding:10px;background:#03c75a;color:white;border:none;border-radius:6px;">
+            네이버 쇼핑 보기
+          </button>
+        </a>
+      </div>
+
+      <div id="hover-card" style="border:1px solid #ddd;padding:15px;border-radius:10px;">
+        <iframe
+          id="hover-player"
+          src="https://www.youtube.com/embed/NiCFqMeVOXo?autoplay=0&mute=1&playsinline=1&loop=1&playlist=NiCFqMeVOXo"
+          title="YouTube Shorts Video Hover Play"
+          style="width:100%;aspect-ratio:9/16;border:0;border-radius:8px;"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <h3>분리수거함 인기상품</h3>
+        <p>이미지 검색 결과</p>
+        <a href="https://search.shopping.naver.com/search/all?query=분리수거함&viewType=image" target="_blank">
+          <button style="width:100%;padding:10px;background:#03c75a;color:white;border:none;border-radius:6px;">
+            상품 리스트 보기
+          </button>
+        </a>
+      </div>
+
+      <div id="click-card" style="border:1px solid #ddd;padding:15px;border-radius:10px;">
+        <iframe
+          id="click-player"
+          src="https://www.youtube.com/embed/NiCFqMeVOXo?autoplay=0&mute=0&playsinline=1&loop=1&playlist=NiCFqMeVOXo"
+          title="YouTube Shorts Video Click Play"
+          style="width:100%;aspect-ratio:9/16;border:0;border-radius:8px;"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <h3>최저가 상품 찾기</h3>
+        <p>네이버 쇼핑 가격 비교</p>
+        <a href="https://search.shopping.naver.com/search/all?query=분리수거함&sort=price_asc" target="_blank">
+          <button style="width:100%;padding:10px;background:#03c75a;color:white;border:none;border-radius:6px;">
+            최저가 보기
+          </button>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var videoId = "NiCFqMeVOXo";
+      var hoverCard = document.getElementById("hover-card");
+      var hoverPlayer = document.getElementById("hover-player");
+      var clickCard = document.getElementById("click-card");
+      var clickPlayer = document.getElementById("click-player");
+
+      if (hoverCard && hoverPlayer) {
+        hoverCard.addEventListener("mouseenter", function () {
+          hoverPlayer.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&mute=1&playsinline=1&loop=1&playlist=" + videoId;
+        });
+
+        hoverCard.addEventListener("mouseleave", function () {
+          hoverPlayer.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=0&mute=1&playsinline=1&loop=1&playlist=" + videoId;
+        });
+      }
+
+      if (clickPlayer && clickCard) {
+        clickCard.style.cursor = "pointer";
+        clickCard.addEventListener("click", function () {
+          clickPlayer.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&mute=0&playsinline=1&loop=1&playlist=" + videoId;
+        });
+      }
+    })();
+  </script>
+
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>
